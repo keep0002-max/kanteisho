@@ -8,58 +8,152 @@
   <style>
     body {
       margin: 0;
-      background: #f7f1ea;
-      color: #3b2f2a;
+      background: #f1ece6;
+      color: #3f3430;
       font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
-      line-height: 1.9;
+      line-height: 2;
     }
 
     .wrapper {
-      max-width: 720px;
+      max-width: 780px;
       margin: 0 auto;
-      padding: 16px;
+      padding: 24px 14px;
     }
 
     .card {
-      background: #fffaf5;
-      padding: 28px 20px;
-      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(238, 160, 170, 0.28), transparent 15%),
+        radial-gradient(circle at 14% 4%, rgba(247, 199, 205, 0.24), transparent 16%),
+        radial-gradient(circle at 92% 88%, rgba(238, 160, 170, 0.22), transparent 16%),
+        radial-gradient(circle at 82% 96%, rgba(247, 199, 205, 0.20), transparent 18%),
+        linear-gradient(135deg, #fffaf7 0%, #fffdfb 48%, #f8efe8 100%);
+      padding: 58px 48px;
+      border-radius: 4px;
       box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      border: 1px solid #ead7c6;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid #d9bfa7;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      top: -45px;
+      left: -45px;
+      width: 240px;
+      height: 240px;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(238, 150, 160, 0.28) 0 18%, transparent 19%),
+        radial-gradient(circle at 55% 38%, rgba(244, 188, 196, 0.24) 0 16%, transparent 17%),
+        radial-gradient(circle at 42% 58%, rgba(238, 150, 160, 0.20) 0 15%, transparent 16%),
+        radial-gradient(circle at 62% 62%, rgba(244, 188, 196, 0.18) 0 14%, transparent 15%),
+        radial-gradient(circle at 48% 48%, rgba(255, 220, 224, 0.25) 0 35%, transparent 36%);
+      opacity: 0.85;
+      filter: blur(1px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 2;
     }
 
     h1 {
-      font-size: 23px;
+      font-size: 25px;
       text-align: center;
-      margin-bottom: 28px;
-      letter-spacing: 0.08em;
+      margin-top: 0;
+      margin-bottom: 38px;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      color: #3e3431;
     }
 
     h2 {
-      font-size: 18px;
-      margin-top: 36px;
-      margin-bottom: 16px;
+      font-size: 20px;
+      margin-top: 42px;
+      margin-bottom: 18px;
       padding-bottom: 8px;
       border-bottom: 1px solid #d8b98a;
-      color: #5a3d2b;
+      color: #4d3930;
+      font-weight: 600;
+      letter-spacing: 0.04em;
     }
 
     p {
       font-size: 16px;
-      margin-bottom: 18px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    ul {
+      margin-top: 0;
+      margin-bottom: 24px;
+      padding-left: 1.4em;
+    }
+
+    li {
+      font-size: 16px;
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
     }
 
     .message {
-      background: #f2e7d8;
-      padding: 18px;
-      border-radius: 14px;
-      margin-top: 30px;
+      background: rgba(239, 228, 213, 0.78);
+      padding: 22px;
+      border-radius: 12px;
+      margin-top: 36px;
     }
 
     .footer {
       text-align: center;
-      margin-top: 36px;
+      margin-top: 44px;
       font-size: 14px;
       color: #8a7669;
+      letter-spacing: 0.12em;
+    }
+
+    @media screen and (max-width: 600px) {
+      .wrapper {
+        padding: 10px;
+      }
+
+      .card {
+        padding: 44px 24px;
+      }
+
+      .card::before {
+        inset: 12px;
+      }
+
+      h1 {
+        font-size: 21px;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        font-size: 17px;
+        margin-top: 34px;
+      }
+
+      p,
+      li {
+        font-size: 16px;
+      }
+
+      .message {
+        padding: 18px;
+      }
     }
   </style>
 </head>
@@ -70,6 +164,8 @@
 
       <h1>テスト様 鑑定書</h1>
 
+      <h2>❖ はじめに</h2>
+
       <p>
         このたびは、鑑定をお申し込みいただきありがとうございます。
       </p>
@@ -77,6 +173,18 @@
       <p>
         いただいた内容をもとに、今の状況とこれからの流れを視てまいりました。
       </p>
+
+      <p>
+        今回の鑑定書では、今のお気持ちやお相手様の状態、そしてこれからどのように向き合っていけばよいのかを、順を追ってお伝えしてまいります。
+      </p>
+
+      <ul>
+        <li>今の状況について</li>
+        <li>お相手様のお気持ち</li>
+        <li>関係が止まっている理由</li>
+        <li>これからの流れ</li>
+        <li>今選ぶべき一歩</li>
+      </ul>
 
       <h2>今の状況について</h2>
 
@@ -94,10 +202,26 @@
         ここにお相手様のお気持ちについての鑑定文を入れます。
       </p>
 
+      <p>
+        必要に応じて、ここにさらに文章を追加していきます。
+      </p>
+
+      <h2>関係が止まっている理由</h2>
+
+      <p>
+        ここに関係が止まっている理由についての鑑定文を入れます。
+      </p>
+
       <h2>これからの流れ</h2>
 
       <p>
         ここにこれからの流れについての鑑定文を入れます。
+      </p>
+
+      <h2>今選ぶべき一歩</h2>
+
+      <p>
+        ここに今後の向き合い方や、相談者様へお伝えしたいことを入れます。
       </p>
 
       <div class="message">
